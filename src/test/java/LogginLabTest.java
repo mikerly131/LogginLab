@@ -36,12 +36,11 @@ public class LogginLabTest {
     @org.junit.Test
     public void thresholdReached() {
         Integer finalLimit = 5;
-        Integer testLimit = 6;
 
         LogginLab lab = new LogginLab();
         lab.setThreshold(finalLimit);
 
-        for (Integer i = 1; i <= testLimit; i++) {
+        for (Integer i = 1; i <= 6; i++) {
             if (lab.thresholdReached(i)) {
                 logger.log(Level.INFO, "Threshold finally reached!");
                 assertTrue(lab.thresholdReached(i));

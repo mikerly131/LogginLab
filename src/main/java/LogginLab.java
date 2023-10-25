@@ -36,7 +36,7 @@ public class LogginLab {
             return false;
     }
 
-    // Method for checking if the limit has reached the threshold
+    // Method for checking if the limit is greater than threshold.  Instructions say over, not equal to or over threshold.
     public boolean thresholdReached(Integer limit) {
         if (limit > this.threshold)
             return true;
