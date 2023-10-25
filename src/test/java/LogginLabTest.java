@@ -32,19 +32,21 @@ public class LogginLabTest {
         }
     }
 
+    // Test to see if the threshold of 5 is reached. Limit must exceed reached threshold not match it to return true
     @org.junit.Test
     public void thresholdReached() {
         Integer finalLimit = 5;
+        Integer testLimit = 6;
 
         LogginLab lab = new LogginLab();
         lab.setThreshold(finalLimit);
 
-        for (Integer i = 1; i <= finalLimit; i++) {
+        for (Integer i = 1; i <= testLimit; i++) {
             if (lab.thresholdReached(i)) {
-                logger.log(Level.INFO, "Threshold not reached! It is "+i);
+                logger.log(Level.INFO, "Threshold finally reached!");
                 assertTrue(lab.thresholdReached(i));
             } else {
-                logger.log(Level.INFO, "Threshold finally reached!");
+                logger.log(Level.INFO, "Threshold not reached! It is "+ finalLimit);
                 assertFalse(lab.thresholdReached(i));
             }
         }
